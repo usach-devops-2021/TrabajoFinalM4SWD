@@ -11,4 +11,6 @@
 * mvn clean package -e
 
 ### Testing Application
-* Abrir navegador: http://localhost:8080/rest/msdxc/dxc?sueldo=4000&ahorro=5000
+* Test DXC: http://localhost:8080/rest/msdxc/dxc?sueldo=4000&ahorro=5000
+* Test Impuesto: http://localhost:8080/rest/msdxc/impuesto?sueldo=4000&ahorro=5000
+* Test Saldo: http://localhost:8080/rest/msdxc/saldo?sueldo=4000&ahorro=5000

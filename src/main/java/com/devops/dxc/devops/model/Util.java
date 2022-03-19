@@ -23,6 +23,35 @@ public class Util {
     }
 
     /**
+     * Método para cacular el impuesto
+     * https://www.previsionsocial.gob.cl/sps/preguntas-frecuentes-nuevo-retiro-seguro-10/
+     * 
+     * @param ahorro
+     * @param sueldo
+     * @return
+     */
+    public static int getImpuesto(int ahorro, int sueldo){
+        int impuesto = 100;
+        // Agregar cálculo.
+        return impuesto;
+    }
+
+    /**
+     * Método para calcular el saldo restante
+     * https://www.previsionsocial.gob.cl/sps/preguntas-frecuentes-nuevo-retiro-seguro-10/
+     *
+     * @param ahorro
+     * @param sueldo
+     * @return
+     */
+    public static int getSaldo(int ahorro, int sueldo){
+        int dxc = getDxc(ahorro,sueldo);
+        int impuesto = getDxc(ahorro,sueldo);
+        // Agregar cálculo.
+        return ahorro - dxc - impuesto;
+    }
+
+    /**
      * Método que retorna el valor de la UF.  Este método debe ser refactorizado por una integración a un servicio
      * que retorne la UF en tiempo real.  Por ejemplo mindicador.cl
      * @return

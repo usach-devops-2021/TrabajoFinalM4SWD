@@ -17,9 +17,27 @@ public class RestData {
 	private final static Logger LOGGER = Logger.getLogger("devops.subnivel.Control");
 
 	@GetMapping(path = "/dxc", produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody Dxc getData(@RequestParam(name = "sueldo") String sueldo, @RequestParam(name = "ahorro") String ahorro){
+	public @ResponseBody Dxc dxc(@RequestParam(name = "sueldo") String sueldo, @RequestParam(name = "ahorro") String ahorro){
 
 		LOGGER.log(Level.INFO, "< Trabajo DevOps - DXC > <Consultado Diez por ciento>");
+
+        Dxc response = new Dxc(Integer.parseInt(ahorro), Integer.parseInt(sueldo));
+		return response;
+	}
+
+	@GetMapping(path = "/saldo", produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Dxc saldo(@RequestParam(name = "sueldo") String sueldo, @RequestParam(name = "ahorro") String ahorro){
+
+		LOGGER.log(Level.INFO, "< Trabajo DevOps - DXC > <Consultado Saldo>");
+
+        Dxc response = new Dxc(Integer.parseInt(ahorro), Integer.parseInt(sueldo));
+		return response;
+	}
+
+	@GetMapping(path = "/impuesto", produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Dxc impuesto(@RequestParam(name = "sueldo") String sueldo, @RequestParam(name = "ahorro") String ahorro){
+
+		LOGGER.log(Level.INFO, "< Trabajo DevOps - DXC > <Consultado Impuesto>");
 
         Dxc response = new Dxc(Integer.parseInt(ahorro), Integer.parseInt(sueldo));
 		return response;
