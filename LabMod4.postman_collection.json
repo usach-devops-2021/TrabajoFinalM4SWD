@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "13cfc65b-2ef4-46dc-ba0a-7a9b2a158d71",
+		"name": "Laboratorio modulo 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dxc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson = pm.response.json();",
+							"",
+							"pm.test(\"Status 200\",function() {",
+							"    pm.response.to.have.status(200)",
+							"});",
+							"",
+							"pm.test(\"Tiempo < 500\",function() {",
+							"    pm.expect(pm.response.responseTime).is.lessThan(500)",
+							"});",
+							"",
+							"pm.test(\"Content-Type application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.contain('application/json');",
+							"});",
+							"",
+							"pm.test(\"Tipo de dato\", () => {",
+							"    pm.expect(responseJson.monto).to.be.a('number');",
+							"});",
+							"",
+							"pm.test(\"Valor de objeto\", () => {",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.monto).to.eql(2500000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/dxc?sueldo=500000&ahorro=25000000",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"dxc.php"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "25000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saldo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson = pm.response.json();",
+							"",
+							"pm.test(\"Status 200\",function() {",
+							"    pm.response.to.have.status(200)",
+							"});",
+							"",
+							"pm.test(\"Tiempo < 500\",function() {",
+							"    pm.expect(pm.response.responseTime).is.lessThan(500)",
+							"});",
+							"",
+							"pm.test(\"Content-Type application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.contain('application/json');",
+							"});",
+							"",
+							"pm.test(\"Tipo de dato\", () => {",
+							"    pm.expect(responseJson.monto).to.be.a('number');",
+							"});",
+							"",
+							"pm.test(\"Valor de objeto\", () => {",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.monto).to.eql(2250000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/saldo?sueldo=500000&ahorro=25000000",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"saldo.php"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "500000"
+						},
+						{
+							"key": "ahorro",
+							"value": "25000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "impuesto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson = pm.response.json();",
+							"",
+							"pm.test(\"Status 200\",function() {",
+							"    pm.response.to.have.status(200)",
+							"});",
+							"",
+							"pm.test(\"Tiempo < 500\",function() {",
+							"    pm.expect(pm.response.responseTime).is.lessThan(500)",
+							"});",
+							"",
+							"pm.test(\"Content-Type application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.contain('application/json');",
+							"});",
+							"",
+							"pm.test(\"Tipo de dato\", () => {",
+							"    pm.expect(responseJson.monto).to.be.a('number');",
+							"});",
+							"",
+							"pm.test(\"Valor de objeto\", () => {",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.monto).to.eql(174532);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_endpoint}}/impuesto?sueldo=2000000&ahorro=50000000",
+					"host": [
+						"{{api_endpoint}}"
+					],
+					"path": [
+						"impuesto.php"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "2000000"
+						},
+						{
+							"key": "ahorro",
+							"value": "50000000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_endpoint",
+			"value": "http://localhost:8081/rest/msdxc",
+			"type": "string"
+		}
+	]
+}
