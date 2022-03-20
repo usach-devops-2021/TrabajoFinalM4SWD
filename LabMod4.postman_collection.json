@@ -48,7 +48,7 @@
 						"{{api_endpoint}}"
 					],
 					"path": [
-						"dxc.php"
+						"dxc"
 					],
 					"query": [
 						{
@@ -107,7 +107,7 @@
 						"{{api_endpoint}}"
 					],
 					"path": [
-						"saldo.php"
+						"saldo"
 					],
 					"query": [
 						{
@@ -166,7 +166,7 @@
 						"{{api_endpoint}}"
 					],
 					"path": [
-						"impuesto.php"
+						"impuesto"
 					],
 					"query": [
 						{
