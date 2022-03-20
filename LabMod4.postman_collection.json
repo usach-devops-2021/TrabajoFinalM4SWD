@@ -27,12 +27,12 @@
 							"});",
 							"",
 							"pm.test(\"Tipo de dato\", () => {",
-							"    pm.expect(responseJson.monto).to.be.a('number');",
+							"    pm.expect(responseJson.dxc).to.be.a('number');",
 							"});",
 							"",
 							"pm.test(\"Valor de objeto\", () => {",
 							"    const responseJson = pm.response.json();",
-							"    pm.expect(responseJson.monto).to.eql(2500000);",
+							"    pm.expect(responseJson.dxc).to.eql(2500000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -86,12 +86,12 @@
 							"});",
 							"",
 							"pm.test(\"Tipo de dato\", () => {",
-							"    pm.expect(responseJson.monto).to.be.a('number');",
+							"    pm.expect(responseJson.saldo).to.be.a('number');",
 							"});",
 							"",
 							"pm.test(\"Valor de objeto\", () => {",
 							"    const responseJson = pm.response.json();",
-							"    pm.expect(responseJson.monto).to.eql(2250000);",
+							"    pm.expect(responseJson.saldo).to.eql(2250000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -145,12 +145,12 @@
 							"});",
 							"",
 							"pm.test(\"Tipo de dato\", () => {",
-							"    pm.expect(responseJson.monto).to.be.a('number');",
+							"    pm.expect(responseJson.impuesto).to.be.a('number');",
 							"});",
 							"",
 							"pm.test(\"Valor de objeto\", () => {",
 							"    const responseJson = pm.response.json();",
-							"    pm.expect(responseJson.monto).to.eql(174532);",
+							"    pm.expect(responseJson.impuesto).to.eql(174532);",
 							"});"
 						],
 						"type": "text/javascript"
