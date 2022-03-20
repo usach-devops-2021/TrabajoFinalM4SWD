@@ -1,5 +1,10 @@
 package com.devops.dxc.devops.model;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+import com.google.gson.Gson;
+
 public class Util {
 
     /**
@@ -31,8 +36,8 @@ public class Util {
      * @return
      */
     public static int getImpuesto(int ahorro, int sueldo){
-        int impuesto = 100;
         // Agregar cálculo.
+        int impuesto = (int)(ahorro * 0.19);
         return impuesto;
     }
 
@@ -57,7 +62,15 @@ public class Util {
      * @return
      */
     public static int getUf(){
-        return 29000;
+        System.out.println("Obteniendo UF");
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> call= restTemplate.getForEntity("https://mindicador.cl/api/uf" ,String.class);
+        Gson gson = new Gson();
+        //MiIndicador miIndicador = gson.fromJson(call.getBody().toLowerCase(), MiIndicador.class);
+        //int valorUf = (miIndicador.getSerie().get(0).getValor()).intValue();
+        int valorUf = 27000;
+        System.out.println("El valor de la UF es: " + valorUf);
+        return valorUf;
     }
     
 }
