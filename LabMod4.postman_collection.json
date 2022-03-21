@@ -91,7 +91,7 @@
 							"",
 							"pm.test(\"Valor de objeto\", () => {",
 							"    const responseJson = pm.response.json();",
-							"    pm.expect(responseJson.saldo).to.eql(2250000);",
+							"    pm.expect(responseJson.saldo).to.eql(22500000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -150,7 +150,7 @@
 							"",
 							"pm.test(\"Valor de objeto\", () => {",
 							"    const responseJson = pm.response.json();",
-							"    pm.expect(responseJson.impuesto).to.eql(174532);",
+							"    pm.expect(responseJson.impuesto).to.eql(380280);",
 							"});"
 						],
 						"type": "text/javascript"
