@@ -39,7 +39,6 @@ public class Util {
         double factor = 0;
         int sueldoAnual = sueldo * 12;
         int dxc = getDxc(ahorro, sueldo);
-        // System.out.println("El sueldo anual es: " + sueldoAnual);
         if(sueldo >= 1500000){
             if(sueldoAnual <= 8266698) {
                 factor = 0;
@@ -59,7 +58,6 @@ public class Util {
                 factor = 0.4;
             }
         }
-        // System.out.println("El factor es:" + factor);
         return (int)(dxc * factor);
     }
 
@@ -83,15 +81,14 @@ public class Util {
      * @return
      */
     public static int getUf(){
-        // System.out.println("Obteniendo UF");
-        //RestTemplate restTemplate = new RestTemplate();
-        //ResponseEntity<String> call= restTemplate.getForEntity("https://mindicador.cl/api/uf" ,String.class);
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> call= restTemplate.getForEntity("https://mindicador.cl/api/uf" ,String.class);
         //Gson gson = new Gson();
         //MiIndicador miIndicador = gson.fromJson(call.getBody().toLowerCase(), MiIndicador.class);
         //int valorUf = (miIndicador.getSerie().get(0).getValor()).intValue();
-        int valorUf = (int)31690.97;
-        // System.out.println("El valor de la UF es: " + valorUf);
-        return valorUf;
+        String valorUFString = call.getBody().toLowerCase().split("valor")[1].split(":")[1].split("}")[0];
+        int valorUF = (int)Double.parseDouble(valorUFString);
+        // System.out.println("Valor de UF: " + valorUF);
+        return valorUF;
     }
-    
 }
