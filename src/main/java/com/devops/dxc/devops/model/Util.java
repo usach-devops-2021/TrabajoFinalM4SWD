@@ -73,9 +73,8 @@ public class Util {
      */
     public static int getSaldo(int ahorro, int sueldo){
         int dxc = getDxc(ahorro,sueldo);
-        int impuesto = getImpuesto(ahorro,sueldo);
         // Agregar cálculo.
-        return ahorro - dxc - impuesto;
+        return ahorro - dxc;
     }
 
     /**
