@@ -90,7 +90,7 @@ public class Util {
         //Gson gson = new Gson();
         //MiIndicador miIndicador = gson.fromJson(call.getBody().toLowerCase(), MiIndicador.class);
         //int valorUf = (miIndicador.getSerie().get(0).getValor()).intValue();
-        int valorUf = 27000;
+        int valorUf = (int)31690.97;
         // System.out.println("El valor de la UF es: " + valorUf);
         return valorUf;
     }
