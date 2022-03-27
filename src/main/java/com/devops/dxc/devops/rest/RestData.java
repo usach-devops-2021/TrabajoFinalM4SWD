@@ -16,6 +16,11 @@ public class RestData {
 
 	private final static Logger LOGGER = Logger.getLogger("devops.subnivel.Control");
 
+	@GetMapping(path = "/ping", produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String ping(){
+		return "ok";
+	}
+
 	@GetMapping(path = "/dxc", produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Dxc dxc(@RequestParam(name = "sueldo") String sueldo, @RequestParam(name = "ahorro") String ahorro){
 
