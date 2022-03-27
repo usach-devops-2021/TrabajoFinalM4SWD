@@ -3,7 +3,7 @@ package com.devops.dxc.devops.model;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.google.gson.Gson;
+// import com.google.gson.Gson;
 
 public class Util {
 
@@ -17,6 +17,7 @@ public class Util {
      */
     public static int getDxc(int ahorro, int sueldo){
         if(((ahorro*0.1)/getUf()) > 150 ){
+            // System.out.println("Se utiliza UF");
             return (int) (150*getUf()) ;
         } else if((ahorro*0.1)<=1000000 && ahorro >=1000000){
             return (int) 1000000;
@@ -83,12 +84,9 @@ public class Util {
     public static int getUf(){
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> call= restTemplate.getForEntity("https://mindicador.cl/api/uf" ,String.class);
-        //Gson gson = new Gson();
-        //MiIndicador miIndicador = gson.fromJson(call.getBody().toLowerCase(), MiIndicador.class);
-        //int valorUf = (miIndicador.getSerie().get(0).getValor()).intValue();
         String valorUFString = call.getBody().toLowerCase().split("valor")[1].split(":")[1].split("}")[0];
         int valorUF = (int)Double.parseDouble(valorUFString);
-        // System.out.println("Valor de UF: " + valorUF);
+        // int valorUF = 31000; Valor Estático
         return valorUF;
     }
 }
